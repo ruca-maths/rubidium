@@ -76,7 +76,8 @@
       "status": "open",
       "dependencies": [
         "SG-004",
-        "SG-005"
+        "SG-005",
+        "SG-008"
       ],
       "lean_files": [],
       "failures": 0,
@@ -90,6 +91,17 @@
         "SG-004",
         "SG-005",
         "SG-006"
+      ],
+      "lean_files": [],
+      "failures": 0,
+      "needs_decomposition": false
+    },
+    {
+      "id": "SG-008",
+      "title": "Characterize winning and losing general states (r, p) for odd m >= 7",
+      "status": "open",
+      "dependencies": [
+        "SG-005"
       ],
       "lean_files": [],
       "failures": 0,
