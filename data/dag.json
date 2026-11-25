@@ -141,11 +141,13 @@
     {
       "id": "SG-011",
       "title": "Starting positions (n, 0) for m = 1 and for every m with ev2(m+1) = true (all even m, and odd m with v2(m+1) even): prove IsP 1 n 0 <-> n = 0, and IsP m n 0 <-> (m+1) | n by combining K4_even and K4_odd, as the corresponding cases of MainTheorem",
-      "status": "open",
+      "status": "proved",
       "dependencies": [
         "SG-002"
       ],
-      "lean_files": [],
+      "lean_files": [
+        "lean/Rubidium/StartK4.lean"
+      ],
       "failures": 0,
       "needs_decomposition": false
     }
