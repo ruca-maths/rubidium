@@ -8,3 +8,4 @@ import Rubidium.K6
 import Rubidium.K9
 import Rubidium.K10
 import Rubidium.K13
+import Rubidium.K7

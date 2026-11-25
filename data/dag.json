@@ -60,11 +60,13 @@
     {
       "id": "SG-005",
       "title": "Formalize periodicity and preperiod bounds for odd m >= 7",
-      "status": "open",
+      "status": "proved",
       "dependencies": [
         "SG-003"
       ],
-      "lean_files": [],
+      "lean_files": [
+        "lean/Rubidium/K7.lean"
+      ],
       "failures": 1,
       "needs_decomposition": false
     },
