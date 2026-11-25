@@ -99,11 +99,13 @@
     {
       "id": "SG-008",
       "title": "Characterize winning and losing general states (r, p) for odd m >= 7",
-      "status": "open",
+      "status": "proved",
       "dependencies": [
         "SG-005"
       ],
-      "lean_files": [],
+      "lean_files": [
+        "lean/Rubidium/K7.lean"
+      ],
       "failures": 0,
       "needs_decomposition": false
     }

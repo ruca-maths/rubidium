@@ -168,4 +168,58 @@ theorem K7' (m : Nat) : ∃ N₀ T, 0 < T ∧ N₀ < 2 ^ (m * (m + 1)) ∧ T ≤
   rw [show i + (r - i) = r by omega, show j + (r - i) = r + (j - i) by omega] at this
   exact this.symm
 
+/-! ### 周期を使った有限状態の特徴づけ -/
+
+/-- 周期 `T` が `N` 以降の全局面に成り立つなら、P/N は周期内の剰余で決まる。-/
+theorem isP_quotient_period (m N T : Nat)
+    (hperiod : ∀ r, N ≤ r → ∀ p, (IsP m (r + T) p ↔ IsP m r p)) :
+    ∀ q s p, (IsP m (N + q * T + s) p ↔ IsP m (N + s) p) := by
+  intro q
+  induction q with
+  | zero => intro s p; simp
+  | succ q ih =>
+    intro s p
+    have hstep : (IsP m (N + (q + 1) * T + s) p ↔ IsP m (N + q * T + s) p) := by
+      have heq : N + (q + 1) * T + s = N + q * T + s + T := by
+        simp [Nat.add_mul]
+        omega
+      rw [heq]
+      exact hperiod (N + q * T + s) (by omega) p
+    exact hstep.trans (ih s p)
+
+/-- `N` 以降の一般局面は、周期内の代表 `N + ((r-N) % T)` の有限表で分類できる。-/
+theorem isP_mod_period (m N T : Nat) (hT : 0 < T)
+    (hperiod : ∀ r, N ≤ r → ∀ p, (IsP m (r + T) p ↔ IsP m r p)) :
+    ∀ r p, N ≤ r →
+      (IsP m r p ↔ IsP m (N + (r - N) % T) p) := by
+  intro r p hr
+  let q := (r - N) / T
+  let s := (r - N) % T
+  have hdecomp : r = N + q * T + s := by
+    dsimp [q, s]
+    have hdivision : (r - N) % T + T * ((r - N) / T) = r - N := Nat.mod_add_div (r - N) T
+    have hmul : T * ((r - N) / T) = ((r - N) / T) * T := Nat.mul_comm T ((r - N) / T)
+    omega
+  rw [hdecomp]
+  have hslt : s < T := Nat.mod_lt _ hT
+  have hsub : N + q * T + s - N = q * T + s := by omega
+  rw [hsub]
+  have hrem : (q * T + s) % T = s := by
+    rw [Nat.mul_comm q T, Nat.add_mod, Nat.mul_mod_right, Nat.zero_add, Nat.mod_eq_of_lt hslt]
+    exact Nat.mod_eq_of_lt hslt
+  rw [hrem]
+  exact isP_quotient_period m N T hperiod q s p
+
+/-- 奇数 `m ≥ 7` では、周期内の有限個の行が全ての一般局面を分類する。
+    周期と前周期には `K7'` の明示的な上界がある。-/
+theorem K7_odd_general_states (m : Nat) (_hm : 7 ≤ m) (_hodd : m % 2 = 1) :
+    ∃ N T, 0 < T ∧ N < 2 ^ (m * (m + 1)) ∧ T ≤ 2 ^ (m * (m + 1)) ∧
+      ∀ r p, N ≤ r →
+        (isPb m r p = true ↔ isPb m (N + (r - N) % T) p = true) := by
+  obtain ⟨N, T, hT, hN, hTbound, hperiod⟩ := K7' m
+  refine ⟨N, T, hT, hN, hTbound, ?_⟩
+  intro r p hr
+  rw [isPb_iff, isPb_iff]
+  exact isP_mod_period m N T hT hperiod r p hr
+
 end Rubidium
