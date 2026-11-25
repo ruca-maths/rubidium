@@ -113,12 +113,14 @@
     {
       "id": "SG-009",
       "title": "Characterize starting positions (n, 0) for odd m >= 7 using finite periodic representatives",
-      "status": "open",
+      "status": "proved",
       "dependencies": [
         "SG-005",
         "SG-008"
       ],
-      "lean_files": [],
+      "lean_files": [
+        "lean/Rubidium/K7.lean"
+      ],
       "failures": 0,
       "needs_decomposition": false
     }

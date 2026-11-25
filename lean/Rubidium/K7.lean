@@ -222,4 +222,14 @@ theorem K7_odd_general_states (m : Nat) (_hm : 7 ≤ m) (_hodd : m % 2 = 1) :
   rw [isPb_iff, isPb_iff]
   exact isP_mod_period m N T hT hperiod r p hr
 
+/-- 奇数 `m ≥ 7` の開始局面列も、周期内の有限個の値で分類できる。-/
+theorem K7_odd_start_positions (m : Nat) (hm : 7 ≤ m) (hodd : m % 2 = 1) :
+    ∃ N T, 0 < T ∧ N < 2 ^ (m * (m + 1)) ∧ T ≤ 2 ^ (m * (m + 1)) ∧
+      ∀ n, N ≤ n →
+        (isPb m n 0 = true ↔ isPb m (N + (n - N) % T) 0 = true) := by
+  obtain ⟨N, T, hT, hN, hTbound, hclass⟩ := K7_odd_general_states m hm hodd
+  refine ⟨N, T, hT, hN, hTbound, ?_⟩
+  intro n hn
+  exact hclass n 0 hn
+
 end Rubidium
