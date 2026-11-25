@@ -49,11 +49,13 @@
     {
       "id": "SG-004",
       "title": "Formalize general even-m P-position structure and 2-adic valuation rules",
-      "status": "open",
+      "status": "proved",
       "dependencies": [
         "SG-002"
       ],
-      "lean_files": [],
+      "lean_files": [
+        "lean/Rubidium/EvenM.lean"
+      ],
       "failures": 0,
       "needs_decomposition": false
     },
