@@ -5,7 +5,7 @@
 ## Overview
 
 - **Main Theorem Target**: `MainTheorem` (OPEN)
-- **Lean-Verified Theorems & Lemmas**: 65
+- **Lean-Verified Theorems & Lemmas**: 70
 - **Recorded Dead Ends**: 3
 - **Stagnation Cycles**: 0 / 20
 
@@ -78,6 +78,11 @@
 | `theorem` | `K10_m1_all_states` | `lean/Rubidium/SmallOdd.lean` | 9 |
 | `theorem` | `K10_m3_finite_states` | `lean/Rubidium/SmallOdd.lean` | 38 |
 | `theorem` | `K10_m5_finite_states` | `lean/Rubidium/SmallOdd.lean` | 51 |
+| `theorem` | `isP_one_one` | `lean/Rubidium/StartK4.lean` | 14 |
+| `theorem` | `start_m_one` | `lean/Rubidium/StartK4.lean` | 20 |
+| `theorem` | `start_ev2` | `lean/Rubidium/StartK4.lean` | 33 |
+| `theorem` | `ev2_succ_of_even` | `lean/Rubidium/StartK4.lean` | 40 |
+| `theorem` | `MainTheorem_K4_cases` | `lean/Rubidium/StartK4.lean` | 44 |
 
 ## Subgoal DAG (`data/dag.json`)
 
@@ -93,7 +98,7 @@
 | `SG-008` | Characterize winning and losing general states (r, p) for odd m >= 7 | `proved` | 0 | no |
 | `SG-009` | Characterize starting positions (n, 0) for odd m >= 7 using finite periodic representatives | `proved` | 0 | no |
 | `SG-010` | Characterize winning and losing general states (r, p) for small odd m (m = 1, 3, 5) | `proved` | 0 | no |
-| `SG-011` | Starting positions (n, 0) for m = 1 and for every m with ev2(m+1) = true (all even m, and odd m with v2(m+1) even): prove IsP 1 n 0 <-> n = 0, and IsP m n 0 <-> (m+1) | n by combining K4_even and K4_odd, as the corresponding cases of MainTheorem | `open` | 0 | no |
+| `SG-011` | Starting positions (n, 0) for m = 1 and for every m with ev2(m+1) = true (all even m, and odd m with v2(m+1) even): prove IsP 1 n 0 <-> n = 0, and IsP m n 0 <-> (m+1) | n by combining K4_even and K4_odd, as the corresponding cases of MainTheorem | `proved` | 0 | no |
 
 ## Recent Dead Ends (`data/dead_ends.jsonl`)
 

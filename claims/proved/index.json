@@ -1,5 +1,5 @@
 {
-  "count": 65,
+  "count": 70,
   "theorems": [
     {
       "name": "nat_all_iff",
@@ -390,6 +390,36 @@
       "kind": "theorem",
       "file": "lean/Rubidium/SmallOdd.lean",
       "line": 51
+    },
+    {
+      "name": "isP_one_one",
+      "kind": "theorem",
+      "file": "lean/Rubidium/StartK4.lean",
+      "line": 14
+    },
+    {
+      "name": "start_m_one",
+      "kind": "theorem",
+      "file": "lean/Rubidium/StartK4.lean",
+      "line": 20
+    },
+    {
+      "name": "start_ev2",
+      "kind": "theorem",
+      "file": "lean/Rubidium/StartK4.lean",
+      "line": 33
+    },
+    {
+      "name": "ev2_succ_of_even",
+      "kind": "theorem",
+      "file": "lean/Rubidium/StartK4.lean",
+      "line": 40
+    },
+    {
+      "name": "MainTheorem_K4_cases",
+      "kind": "theorem",
+      "file": "lean/Rubidium/StartK4.lean",
+      "line": 44
     }
   ]
 }
