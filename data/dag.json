@@ -94,7 +94,8 @@
         "SG-005",
         "SG-006",
         "SG-009",
-        "SG-011"
+        "SG-011",
+        "SG-012"
       ],
       "lean_files": [],
       "failures": 0,
@@ -146,6 +147,18 @@
       "status": "open",
       "dependencies": [
         "SG-002"
+      ],
+      "lean_files": [],
+      "failures": 0,
+      "needs_decomposition": false
+    },
+    {
+      "id": "SG-012",
+      "title": "Starting positions (n, 0) for m = 5 and closed-form odd-m classes (K6, K9, K10a, K13): prove IsP 5 n 0 <-> (n % 13 = 0 \\/ n % 13 = 7) and unify the explicit starting-position characterizations from SG-002 and SG-003 to close the m = 5 gap between SG-009 and SG-011 in MainTheorem",
+      "status": "open",
+      "dependencies": [
+        "SG-002",
+        "SG-003"
       ],
       "lean_files": [],
       "failures": 0,
