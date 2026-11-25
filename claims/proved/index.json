@@ -1,5 +1,5 @@
 {
-  "count": 62,
+  "count": 65,
   "theorems": [
     {
       "name": "nat_all_iff",
@@ -372,6 +372,24 @@
       "kind": "theorem",
       "file": "lean/Rubidium/K9.lean",
       "line": 205
+    },
+    {
+      "name": "K10_m1_all_states",
+      "kind": "theorem",
+      "file": "lean/Rubidium/SmallOdd.lean",
+      "line": 9
+    },
+    {
+      "name": "K10_m3_finite_states",
+      "kind": "theorem",
+      "file": "lean/Rubidium/SmallOdd.lean",
+      "line": 38
+    },
+    {
+      "name": "K10_m5_finite_states",
+      "kind": "theorem",
+      "file": "lean/Rubidium/SmallOdd.lean",
+      "line": 51
     }
   ]
 }
